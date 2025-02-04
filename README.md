@@ -2,6 +2,7 @@
 Learn how to create games with Godot by creating your first basic game!
 
 - [**What is Godot?**](#what-is-godot)
+- [**Installing Godot**](#installing-godot)
 - [**Planning out our game!**](#planning-out-our-game)
 
 # What is Godot? 
@@ -46,5 +47,7 @@ Game engines are sterotypically super complicated, packed with tons of features 
 The last thing that sets Godot apart is that its constantly changing. The fact that it is constantly changing and evolving is super interesting to developers in the industry looking for future ways to streamline the process of making games. This interest in the technology might be something that helps you secure an interview where you can talk about your experience with this technology (this is something I experienced when interviewing with **Riot Games!!**).
 
 For these reasons, we will be teaching and recommending Godot to be used for LionJam and future game jams!
+
+# Installing Godot
 
 # Planning out our game!
