@@ -33,7 +33,7 @@ Upon downloading the game enigne, you will notice how easy it is to use on your 
 
 <img width="997" alt="Screenshot 2025-02-03 at 7 06 02 PM" src="https://github.com/user-attachments/assets/069296d0-a919-4b00-b7f7-602119322aa5" />
 An open-source application is an application that's sourcecode is publicly available online. The developers of Godot are people in the game development community that use Godot and publicly contribute to the project. What this means is that Goodt will always be free and the community is super supportive and open to allow the app to be prosperious!<br />
-
+<br />
 4) Godot is **EASY!!!**
 
 Game engines are sterotypically super complicated, packed with tons of features that are poorly explained. Godot is suprisingly insanely easy to get started with. It features a Python-like programming language called GDScript with documentation built into the application. Hovering over any library function allows you to pull up the wiki page for what that function does and how it works. Features mostly behave as you would expect making it super easy to start making games with Godot after getting over the initial learner barrier as you will soon see!
