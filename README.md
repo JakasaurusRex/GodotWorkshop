@@ -28,7 +28,8 @@ This is really critical. A lot of game engines are free for personal use but cos
 Upon downloading the game enigne, you will notice how easy it is to use on your computer! Game engines are historically large programs that consume a lot of memory and processing power. Godot on the otherhand is very easy to run on any computer and its download size is around 500 MB, smaller than most social media apps! It can also run on any type of computer!
 
 3) Godot is **Open-Source**
-   
+
+<img width="997" alt="Screenshot 2025-02-03 at 7 06 02 PM" src="https://github.com/user-attachments/assets/069296d0-a919-4b00-b7f7-602119322aa5" />
 An open-source application is an application that's sourcecode is publicly available online. The developers of Godot are people in the game development community that use Godot and publicly contribute to the project. What this means is that Goodt will always be free and the community is super supportive and open to allow the app to be prosperious!
 
 4) Godot is **EASY**!!
