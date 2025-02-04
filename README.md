@@ -48,4 +48,4 @@ The last thing that sets Godot apart is that its constantly changing. The fact t
 
 For these reasons, we will be teaching and recommending Godot to be used for LionJam and future game jams!
 
-# Planning out our game
+# Planning out our game!
