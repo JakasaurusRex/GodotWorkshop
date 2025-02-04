@@ -2,7 +2,7 @@
 Learn how to create games with Godot by creating your first basic game!
 
 - [What is Godot?](#what-is-godot)
-- [Planning out our game](#planning-out-our-game)
+- [Planning out our game!](#planning-out-our-game)
 
 # What is Godot? 
 ![image](https://github.com/user-attachments/assets/afc258b2-e435-4bb6-b407-0a5dec36d055)
