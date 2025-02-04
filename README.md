@@ -15,9 +15,9 @@ Some well known game engines are Unity, Unreal Engine, Godot, CryEngine, GameMak
 
 You can also create your own game engine using any programming language! It is pretty involved as you have to figure out how to interact with the computer to display and make sounds on your own but these challenges can be really rewarding to solve!
 
-## What sets Godot appart from other game engines?
+## What sets Godot apart from other game engines?
 
-A number of features set Godot appart from the pack.
+A number of features set Godot apart from the pack.
 
 1) Godot is completely **free**
    
@@ -38,5 +38,9 @@ An open-source application is an application that's sourcecode is publicly avail
 4) Godot is **EASY!!!**
 
 Game engines are sterotypically super complicated, packed with tons of features that are poorly explained. Godot is suprisingly insanely easy to get started with. It features a Python-like programming language called GDScript with documentation built into the application. Hovering over any library function allows you to pull up the wiki page for what that function does and how it works. Features mostly behave as you would expect making it super easy to start making games with Godot after getting over the initial learner barrier as you will soon see!
+
+5) Godot is a **new technology**
+
+The last thing that sets Godot apart is that its constantly changing. The fact that it is constantly changing and evolving is super interesting to developers in the industry looking for future ways to streamline the process of making games. This interest in the technology might be something that helps you secure an interview where you can talk about your experience with this technology (this is something I experienced when interviewing with **Riot Games!!**).
 
 For these reasons, we will be teaching and recommending Godot to be used for LionJam and future game jams!
