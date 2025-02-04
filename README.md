@@ -1,7 +1,8 @@
 # Introductory to Godot Workshop!
 Learn how to create games with Godot by creating your first basic game!
 
--[What is Godot?](#what-is-godot?)
+- [What is Godot?](#what-is-godot?)
+- [Planning out our game](#planning--out-our-game)
 
 # What is Godot? 
 ![image](https://github.com/user-attachments/assets/afc258b2-e435-4bb6-b407-0a5dec36d055)
@@ -47,4 +48,4 @@ The last thing that sets Godot apart is that its constantly changing. The fact t
 
 For these reasons, we will be teaching and recommending Godot to be used for LionJam and future game jams!
 
-# Planning out our game!
+# Planning out our game
