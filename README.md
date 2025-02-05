@@ -6,7 +6,7 @@ Learn how to create games with Godot by creating your first basic game!
 - [**Exploring the engine**](#exploring-the-engine)
 - [**Godot Terms**](#godot-terms)
 - [**Planning out our game!**](#planning-out-our-game)
-- [**Dino Time](#dino-time)
+- [**Dino Time**](#dino-time)
 
 # What is Godot? 
 ![image](https://github.com/user-attachments/assets/afc258b2-e435-4bb6-b407-0a5dec36d055)
