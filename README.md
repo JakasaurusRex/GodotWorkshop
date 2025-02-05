@@ -5,6 +5,7 @@ Learn how to create games with Godot by creating your first basic game!
 - [**Installing Godot**](#installing-godot)
 - [**Planning out our game!**](#planning-out-our-game)
 - [**Exploring the engine**](#exploring-the-engine)
+- [**Godot Terms**](#godot-terms)
 
 # What is Godot? 
 ![image](https://github.com/user-attachments/assets/afc258b2-e435-4bb6-b407-0a5dec36d055)
@@ -85,6 +86,7 @@ Upon opening the engine and creating a new project you should see something like
 Before we start building lets explore the editor! 
 
 Let us first take a look at the panel on the bottom left.
+
 <img width="275" alt="Screenshot 2025-02-05 at 3 58 37 PM" src="https://github.com/user-attachments/assets/b0f96e4d-ff35-49e5-a88f-50cd96f39d2b" />
 
 This is the file explorer, all the files in our project including our assets (like art, sfx, music, and code) will all be contained in this area. Its up to you how you organize this, but its just to make it easy to find things when working with a lot of files!
@@ -94,6 +96,7 @@ res:// is the base directory for your project. If you open the file explorer on 
 Epic!!
 
 Next let's take a look at the viewport!
+
 <img width="958" alt="Screenshot 2025-02-05 at 4 02 21 PM" src="https://github.com/user-attachments/assets/e73284cf-c04f-4a63-8f5b-f0966d860d35" />
 
 The viewport is the area shown above. It allows us to see what our game looks like! Once we start adding some stuff to our game we will see the viewport populate. Within the viewport there are a couple of tools to allow you to edit assets on the fly like a scale tool, move tool, and rotate tool. Once you add a camera to your game, it will also show up here so you can see what your game will look like when being played. Last thing to note is there is two version of the viewport, the 2D and 3D version. You can switch between the versions at the top of your screen!
@@ -118,3 +121,30 @@ It would also be a good idea to familiarize yourself with the contents of the dr
 
 With that, you should be familiar with the layout of the editor!
 
+# Godot Terms
+
+While using Godot, you will come across Nodes and Scenes before working on games with Godot its important to understand what they are and how they work.
+
+## Nodes
+
+In Godot a Node is the base unit object and class. Nodes have base properties and functions. Within Nodes, you can attach scripts that let you program the node and its properties. Additionally, you can attach the signals to functions within the script, allowing them to handle when signals are activated. 
+
+Godot offers a bunch of preset nodes that you will use while making games. The one that will be most important to us is the Node2D. This node features properties such as transform (which is a collection of information such as position, rotation, and scale), it also inherits from the Node base class.
+
+Another example of a Node is a CharacterBody2D node. This node features properties that allow for movement and physics handling. Additionally, it inherits from CollisionObject2D which allows for the node to collide with other collision objects, assuming it has a collision shape. 
+
+Pretty much everything in Godot is a node, so you will see them everywhere! [Heres a video where you can learn about every Node available in Godot!](https://www.youtube.com/watch?v=tO2gthp45MA)
+
+## Scenes
+
+<img width="419" alt="Screenshot 2025-02-05 at 5 06 29 PM" src="https://github.com/user-attachments/assets/2dc9fa8f-cfe1-425a-8529-fb0fe56723c5" />
+
+Now that we know about Nodes, we can explore scenes. Scenes are collections of nodes, with a root node to allow for a hierarchal relationship within the collection. While this relationship allows for organizaiton, it also allows for you to combine different nodes together. The properties of children follow the properties of the parent. For example, if one Node2D is the child of another Node2D, and the parents position is being updated, the child will move around relative to the parent. 
+
+This allows for us to combine nodes to create all sorts of objects. For example, you might use a scene as a collection of nodes that represent a playable character, that will feature a node that controls the animations and a collision shape node and maybe the item the character is holding in its hand.
+
+With a scene like a character, we can then put that scene within another scene like the level. This is called nesting!
+
+The nesting of scenes allows for you to keep your project super organized with each type of object (including menus and UI) having its own scene!
+
+Scenes are another super important topics. [I highly recommend checking out Brackey's Godot intro where he goes super into the scene system!](https://www.youtube.com/watch?v=LOhfqjmasi0)
