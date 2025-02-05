@@ -50,4 +50,13 @@ For these reasons, we will be teaching and recommending Godot to be used for Lio
 
 # Installing Godot
 
+The best way of downloading Godot in my opinion is through the website!
+
+[You can find the download link here!](https://godotengine.org/download)
+
+You can additionally download it off of Github or Steam but I recommend downloading the latest version from their website since the app is constantly changing and that we you can decide when to update the engine. 
+
 # Planning out our game!
+
+
+
