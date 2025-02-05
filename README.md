@@ -113,6 +113,7 @@ The last main panel is the Inspector panel on the right side of the editor. Here
 <img width="279" alt="Screenshot 2025-02-05 at 4 24 29 PM" src="https://github.com/user-attachments/assets/4b3aca69-bb66-41a3-933d-b4431a6463fb" />
 
 It would also be a good idea to familiarize yourself with the contents of the drop downs at the top of the screen. These are the places where you will be able to change the resolution of your game, save, export, and change the controls. 
+
 <img width="483" alt="Screenshot 2025-02-05 at 4 27 13 PM" src="https://github.com/user-attachments/assets/5091986d-fa67-4263-afbf-71901fc012a2" />
 
 With that, you should be familiar with the layout of the editor!
