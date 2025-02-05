@@ -78,6 +78,42 @@ I have provided some assets that I will be using in the Github repository!
 
 # Exploring the Engine 
 
+<img width="1507" alt="Screenshot 2025-02-05 at 3 55 29 PM" src="https://github.com/user-attachments/assets/5694bced-b5d5-400f-a75f-03ee3560af95" />
 
+Upon opening the engine and creating a new project you should see something like above!
 
+Before we start building lets explore the editor! 
+
+Let us first take a look at the panel on the bottom left.
+<img width="275" alt="Screenshot 2025-02-05 at 3 58 37 PM" src="https://github.com/user-attachments/assets/b0f96e4d-ff35-49e5-a88f-50cd96f39d2b" />
+
+This is the file explorer, all the files in our project including our assets (like art, sfx, music, and code) will all be contained in this area. Its up to you how you organize this, but its just to make it easy to find things when working with a lot of files!
+
+res:// is the base directory for your project. If you open the file explorer on your computer and navigate to the place you opened your project in, you should see icon.svg, like we see in the editor!
+
+Epic!!
+
+Next let's take a look at the viewport!
+<img width="958" alt="Screenshot 2025-02-05 at 4 02 21 PM" src="https://github.com/user-attachments/assets/e73284cf-c04f-4a63-8f5b-f0966d860d35" />
+
+The viewport is the area shown above. It allows us to see what our game looks like! Once we start adding some stuff to our game we will see the viewport populate. Within the viewport there are a couple of tools to allow you to edit assets on the fly like a scale tool, move tool, and rotate tool. Once you add a camera to your game, it will also show up here so you can see what your game will look like when being played. Last thing to note is there is two version of the viewport, the 2D and 3D version. You can switch between the versions at the top of your screen!
+
+<img width="972" alt="Screenshot 2025-02-05 at 4 09 10 PM" src="https://github.com/user-attachments/assets/c41894e0-4ce9-46bb-895a-b6aba65f1edc" />
+
+The next area we can take a look at is the bottom panel. This is home to some important tools we will use while editing. First is the Output tab. This is where all our error messaegs and print messages will show up - stuff thats pretty important for debugging! Next is the debugger which will let you figure out the values of differnet variables at different times during the run of your game. It will also help you find out where errors are coming from! The audio tab lets you control the volume of different sounds from your game. The animation player is super important - its very powerful. It will probably primarily be used for creating animations though! The shader editor is where you will write shaders for your game!
+
+<img width="269" alt="Screenshot 2025-02-05 at 4 16 09 PM" src="https://github.com/user-attachments/assets/1c63cc8d-f29c-40fa-827b-7e7d9e94830e" />
+
+The last two panels are definitley the most important besides the viewport. First the Hierarchy/Scene Panel is on the left side of the screen. This panel showcases all the **nodes** (we will describe this term soon) that are in the scene. It also shows the hierarchy of nodes (parental relations of objects). Every scene has a root node as a main reference to the scene. It is useful for organizational purposes. Here is what the panel looks like with 1 Node2D in it. 
+
+<img width="272" alt="Screenshot 2025-02-05 at 4 23 47 PM" src="https://github.com/user-attachments/assets/cdcf43ce-e4f4-4b87-a465-82e55037522c" />
+
+The last main panel is the Inspector panel on the right side of the editor. Here we can find all the properties of an object or node like its position, its size, its texture and more! Under the Node tab of the inspector is also a bunch of events also known as **Signals** that can be connected to code when the node is interacted with in certain ways.
+
+<img width="279" alt="Screenshot 2025-02-05 at 4 24 29 PM" src="https://github.com/user-attachments/assets/4b3aca69-bb66-41a3-933d-b4431a6463fb" />
+
+It would also be a good idea to familiarize yourself with the contents of the drop downs at the top of the screen. These are the places where you will be able to change the resolution of your game, save, export, and change the controls. 
+<img width="483" alt="Screenshot 2025-02-05 at 4 27 13 PM" src="https://github.com/user-attachments/assets/5091986d-fa67-4263-afbf-71901fc012a2" />
+
+With that, you should be familiar with the layout of the editor!
 
