@@ -54,6 +54,8 @@ The best way of downloading Godot in my opinion is through the website!
 
 [You can find the download link here!](https://godotengine.org/download)
 
+![image](https://github.com/user-attachments/assets/1d4a7724-d5b4-4969-8d23-bb64309af2df)
+
 You can additionally download it off of Github or Steam but I recommend downloading the latest version from their website since the app is constantly changing and that we you can decide when to update the engine. 
 
 # Planning out our game!
