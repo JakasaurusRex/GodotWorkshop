@@ -4,6 +4,7 @@ Learn how to create games with Godot by creating your first basic game!
 - [**What is Godot?**](#what-is-godot)
 - [**Installing Godot**](#installing-godot)
 - [**Planning out our game!**](#planning-out-our-game)
+- [**Exploring the engine**](#exploring-the-engine)
 
 # What is Godot? 
 ![image](https://github.com/user-attachments/assets/afc258b2-e435-4bb6-b407-0a5dec36d055)
@@ -59,6 +60,24 @@ The best way of downloading Godot in my opinion is through the website!
 You can additionally download it off of Github or Steam but I recommend downloading the latest version from their website since the app is constantly changing and that we you can decide when to update the engine. 
 
 # Planning out our game!
+
+The game that we will be making for the workshop is a clone of the google dinosaur game! 
+
+https://github.com/user-attachments/assets/f459a610-bea2-45fe-bb45-70a064fe10fe
+
+Here's the assets we are gonna need for our game:
+- A sprite for the character
+- A jumping sfx for when the character jumps
+- A sprite for the ground
+- A sprite for the things we are jumping over
+- A sprite for the clouds
+
+With all of that, we will be able to bring it all into Godot to make our game!
+
+I have provided some assets that I will be using in the Github repository! 
+
+# Exploring the Engine 
+
 
 
 
