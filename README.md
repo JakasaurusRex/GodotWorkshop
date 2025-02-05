@@ -3,9 +3,10 @@ Learn how to create games with Godot by creating your first basic game!
 
 - [**What is Godot?**](#what-is-godot)
 - [**Installing Godot**](#installing-godot)
-- [**Planning out our game!**](#planning-out-our-game)
 - [**Exploring the engine**](#exploring-the-engine)
 - [**Godot Terms**](#godot-terms)
+- [**Planning out our game!**](#planning-out-our-game)
+- [**Dino Time](#dino-time)
 
 # What is Godot? 
 ![image](https://github.com/user-attachments/assets/afc258b2-e435-4bb6-b407-0a5dec36d055)
@@ -59,23 +60,6 @@ The best way of downloading Godot in my opinion is through the website!
 ![image](https://github.com/user-attachments/assets/1d4a7724-d5b4-4969-8d23-bb64309af2df)
 
 You can additionally download it off of Github or Steam but I recommend downloading the latest version from their website since the app is constantly changing and that we you can decide when to update the engine. 
-
-# Planning out our game!
-
-The game that we will be making for the workshop is a clone of the google dinosaur game! 
-
-https://github.com/user-attachments/assets/f459a610-bea2-45fe-bb45-70a064fe10fe
-
-Here's the assets we are gonna need for our game:
-- A sprite for the character
-- A jumping sfx for when the character jumps
-- A sprite for the ground
-- A sprite for the things we are jumping over
-- A sprite for the clouds
-
-With all of that, we will be able to bring it all into Godot to make our game!
-
-I have provided some assets that I will be using in the Github repository! 
 
 # Exploring the Engine 
 
@@ -148,3 +132,22 @@ With a scene like a character, we can then put that scene within another scene l
 The nesting of scenes allows for you to keep your project super organized with each type of object (including menus and UI) having its own scene!
 
 Scenes are another super important topics. [I highly recommend checking out Brackey's Godot intro where he goes super into the scene system!](https://www.youtube.com/watch?v=LOhfqjmasi0)
+
+# Planning out our game!
+
+The game that we will be making for the workshop is a clone of the google dinosaur game! 
+
+https://github.com/user-attachments/assets/f459a610-bea2-45fe-bb45-70a064fe10fe
+
+Here's the assets we are gonna need for our game:
+- A sprite for the character
+- A jumping sfx for when the character jumps
+- A sprite for the ground
+- A sprite for the things we are jumping over
+- A sprite for the clouds
+
+With all of that, we will be able to bring it all into Godot to make our game!
+
+I have provided some assets that I will be using in the Github repository! 
+
+# Dino Time!
