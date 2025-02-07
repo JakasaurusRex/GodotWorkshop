@@ -148,7 +148,7 @@ Here's the assets we are gonna need for our game:
 
 With all of that, we will be able to bring it all into Godot to make our game!
 
-I have provided some assets that I will be using in the Github repository! Feel free to download the assets folder within the dinotime folder!
+I have provided some assets that I will be using in the [Github repository](https://github.com/JakasaurusRex/GodotWorkshop)! Feel free to download the assets folder within the dinotime folder!
 
 This section is inspired by the following youtube video by [Coding with Russ](https://www.youtube.com/watch?v=nKBhz6oJYsc&t=2619s)
 
