@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://clrafkvgwbnwa"]
+
+[ext_resource type="Texture2D" uid="uid://bn1l76ofkn73g" path="res://assets/obstacle/stump.png" id="1_4rsbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ess2"]
+size = Vector2(40, 24.6667)
+
+[node name="Stump" type="Area2D"]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_4rsbx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1.66667)
+shape = SubResource("RectangleShape2D_5ess2")

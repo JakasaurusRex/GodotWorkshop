@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://de7isf6t5dp16"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_s84rd"]
+font_size = 40
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="Score" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "SCORE:"
+label_settings = SubResource("LabelSettings_s84rd")
+
+[node name="Start" type="Label" parent="."]
+offset_left = 362.0
+offset_top = 303.0
+offset_right = 733.0
+offset_bottom = 358.0
+text = "press enter to start"
+label_settings = SubResource("LabelSettings_s84rd")
+horizontal_alignment = 1
+vertical_alignment = 1
