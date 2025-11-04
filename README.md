@@ -163,16 +163,18 @@ Make sure to start off with an empty project!
 
 ## Parallax Background
 
-The first thing we are going to do is create our moving background. You may have seen in some games how backgrounds look like they are 3D despite being 2D. Developers accomplish this by using an effect called Parallax. Parallax moves different layers of background images at different speeds to make it look like theres some dimensionalituy to the background. It's easier to undersand in practice so lets check it out!
+The first thing we are going to do is create our moving background. You may have seen in some games how backgrounds look like they are 3D despite being 2D. [Developers accomplish this by using an effect called Parallax](https://en.wikipedia.org/wiki/Parallax). Parallax moves different layers of background images at different speeds to make it look like theres some dimensionalituy to the background. It's easier to undersand in practice so lets check it out!
 
-First thing we want to do is setup this structure of a scene. The parallax background node will be our root node. Then we are going to add in a Sprite2D, this is just a Node2D with a texture property, for the blank background. Once you have added in the Texture2D, add in bg1.png to its texture slot! Additionally, we are gonna turn off the property "Centered" under offset. Next we are going to add in a ParallaxLayer node below our Sprite2D for the blank background. The ordering of the nodes determines the order on the screen, the lower the node is the closer it will be to the front. In the parallax node we just added, we are going to add in another Sprite2D where we can add in the first background texture, bg2.png. We are going to want to uncheck the centered property again here. You also might notice the texture looks a little small and blurry. To fix this, I opened the Node2D Transform property and scaled the image by 3, and then went to the Texture property and changed the filter to nearest. This fixed up our resolution issues!
+First thing we want to do is setup this structure of a scene. Godot has a parallax background node that we can use as our root node. Then we can add in a Sprite2D, this is just a Node2D with a texture property, for the blank background. Once you have added in the Sprite2D, add in bg1.png to its texture slot in the properties panel! Additionally, we are gonna turn off the property "Centered" under offset. 
+
+Next we are going to add in a ParallaxLayer node below our Sprite2D for the blank background (see the attached image for what that looks like). The ordering of the ParallaxLayer nodes determines the order they appear on the screen, the lower the node is the closer it will be to the front. In the parallax node we just added, we are going to add in another Sprite2D where we can add in the first background texture, bg2.png. We are going to want to uncheck the "centered" property again here. You also might notice the texture looks a little small and blurry. To fix this, I opened the Node2D Transform property and scaled the image by 3, and then went to the Texture property and changed the filter to "nearest". This fixed up our resolution issues!
 <img width="259" alt="Screenshot 2025-02-06 at 9 13 39 PM" src="https://github.com/user-attachments/assets/4c2240f6-3ad2-4d56-8c42-aca24b0139ed" />
 
-Now that we have that setup, we should now setup how the background will move. Under the motion properties of our ParallaxLayer lets set the x value of mirroring to 1156 - this value comes from multiplying the width of our texture by 3 because we scaled it by 3. Then we set our scale's x value to 0.6, this is the speed our background will be moving out. Sometimes values in Godot are linked such as the x and y value of the Scale. We can unlink them by clicking the chain icon and then we can just individually change the X value. 
+Now that we have that setup, we can now setup how the background can move. Under the motion properties of our ParallaxLayer lets set the x value of mirroring to 1156 - this value comes from multiplying the width of our texture by 3 (remember when we scaled the texture by 3 to make it larger!). Then we set our scale's x value to 0.6, this is the speed our background will be moving out. Sometimes values in Godot are linked such as the x and y value of the Scale. We can unlink them by clicking the chain icon and then we can just individually change the X value, otherwise we would be moving the background both vertically and horizontally. 
 
-Once we have done this, we can copy and paste the Parallax layer 3 more times for our layered background. After copying and pasting, change the scale values to increase by 0.1 as our layers get closer to the front. When we play our game, we will see how the layers closer to the screen will move faster.
+Once we have done this, we can copy and paste the Parallax layer 3 more times for our layered background, making sure to replace the images with the corresponding background images. After copying and pasting, change the scale values to increase by 0.1 as our layers get closer to the front. When we play our game, we will see how the layers closer to the screen will move faster.
 
-After doing all of that, we are finished with our background! It should look something like below. Let's save it to a scenes folder we can create within our assets folder as background.tscn.
+After all of that, we are finished with our background! It should look something like below. Let's save it to a scenes folder we can create within our assets folder as background.tscn.
 <img width="1512" alt="Screenshot 2025-02-06 at 10 02 31 PM" src="https://github.com/user-attachments/assets/c4437eef-bae8-45b4-92b8-be271799e4fd" />
 
 ## Setting up our Dino!
@@ -553,5 +555,6 @@ func update_score():
 	ui.get_node("Score").text = "SCORE: " + str(score)
 	
 ```
+
 
 
