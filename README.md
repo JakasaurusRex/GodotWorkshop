@@ -137,7 +137,7 @@ Scenes are another super important topics. [I highly recommend checking out Brac
 
 The game that we will be making for the workshop is a clone of the google dinosaur game! 
 
-https://github.com/user-attachments/assets/f459a610-bea2-45fe-bb45-70a064fe10fe
+<video src="https://github.com/user-attachments/assets/f459a610-bea2-45fe-bb45-70a064fe10fe" />
 
 Here's the assets we are gonna need for our game:
 - A sprite for the character
@@ -553,3 +553,4 @@ func update_score():
 	ui.get_node("Score").text = "SCORE: " + str(score)
 	
 ```
+
