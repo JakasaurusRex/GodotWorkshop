@@ -183,7 +183,7 @@ Next we are gonna set up the dinosaur character. First lets create a new scene w
 
 <img width="268" alt="Screenshot 2025-02-06 at 10 12 39 PM" src="https://github.com/user-attachments/assets/a9637817-b78d-4a1d-80dd-553b139aaf45" />
 
-First lets setup the character animations. In our AnimatedSprite2D lets look at the Animation property and create a new SpriteFrames object to store our sprite frames for our character. Then upon opening the SpriteFrames, the animation tab on the bottom appears. Here is where we can add the different animations for our character. We are going to create 3 different animations: idle (for when the character isn't moving), running, and jumping. You can create each new animation by clicking the icon with the green plus in the top left of the animation panel. From there we can add frames to our animations by clicking the icon that looks like the grid. We will import the sprites from our sprite sheet that is in the assets folder. Once you open up the sprite sheet, a popup like this should appear! Make sure to change our Horizontal and Vertical to be 24 and 1 respectively, this is because we have 24 sprites all in 1 row. We will use the first 4 frames for idle, 
+First lets setup the character's animations. In our AnimatedSprite2D lets look at the Animation property and create a new SpriteFrames object to store our sprite frames for our character. Then upon opening the SpriteFrames, the animation tab on the bottom appears. Here is where we can add the different animations for our character. We are going to create 3 different animations: idle (for when the character isn't moving), running, and jumping. You can create each new animation by clicking the icon with the green plus in the top left of the animation panel. From there we can add frames to our animations by clicking the icon that looks like the grid. We will import the sprites from our sprite sheet that is in the assets folder. Once you open up the sprite sheet, a popup like below should appear! Make sure to change our Horizontal and Vertical to be 24 and 1 respectively, this is because we have 24 sprites all in 1 row. We will use the first 4 frames for the idle animation. 
 
 <img width="983" alt="Screenshot 2025-02-06 at 10 21 24 PM" src="https://github.com/user-attachments/assets/46a6a5ef-3e0f-480a-a7f4-2e97b48c9bfa" />
 
@@ -191,7 +191,7 @@ After chosing those 4 frames, pick out the next 6 frames for a running animation
 
 <img width="285" alt="Screenshot 2025-02-06 at 10 27 20 PM" src="https://github.com/user-attachments/assets/e44b05bf-2d0b-45a9-b041-e34836cd5e82" />
 
-Now that we have our animations set up, lets setup our collision shape. This will be used to track when we hit the obstacles in our game! Click on your CollisionShape2D node and add a Rectangle collision shape to the Shape property. Then adjust the size to fit the dinosaur. We should see something like this! With that we are pretty much all set!
+Now that we have our animations set up, lets setup our collision shape which we will use for checking if we are touching the floor or obstacles. Click on your CollisionShape2D node and add a Rectangle collision shape to the Shape property. Then adjust the size to fit the dinosaur by dragging the edges of the box or changing the width and height on the CollisionShape object. We should see something like this! With that we are pretty much all set!
 
 <img width="393" alt="Screenshot 2025-02-06 at 10 30 17 PM" src="https://github.com/user-attachments/assets/55ef6e3f-20c7-479f-9718-d211c6e50fa0" />
 
@@ -199,7 +199,7 @@ Last thing to do is setup our jumping sound effect (by the way I made this using
 
 ## Ground Pound
 
-Next lets create the ground our character will be running on. Similar deal. Lets create a new scene with a StaticBody2D as the root. StaticBodys are useful for floors and walls that don't move! Let's add in a Sprite2D and a CollisionShape2D to our scene. Lets add in our grass floor as the texture for the sprite, scale the StaticBody2D by 3 and fix the resolution on our texture like we have done previously. Next, I dragged my sprite to the bottom of the canvas because thats where our floor is going to be in the game. Then add in a rectangular collision shape to the ground. You may notice that the ground is wider than the canvas size. This will allow us to make it seem like the ground is moving while we are running and we will use it later when we are coding our gameplay loop. Thats all we need to setup for the ground for now. I changed the name of the StaticBody2D to be ground and saved the scene.
+Next lets create the ground our character will be running on. It will be a similar process to what we have been doing! Lets create a new scene with a StaticBody2D as the root. StaticBodys are useful for floors and walls because they don't move with physics! Let's add in a Sprite2D and a CollisionShape2D to our scene as well as our grass floor as the texture for the sprite, scale the StaticBody2D by 3 and fix the resolution on our texture like we have done previously. Next, make sure to drag your floor to the bottom of the canvas, as thats where its going to be in the game. Then add in a rectangular collision shape to the ground. You may notice that the ground is wider than the canvas size. This will allow us to make it seem like the ground is moving while we are running and we will use it later when we are coding our gameplay loop. Thats all we need to setup for the ground for now. Lets also change the name of the root node to ground and save the scene!
 
 <img width="1234" alt="Screenshot 2025-02-06 at 10 43 52 PM" src="https://github.com/user-attachments/assets/52966c56-2ed9-49fe-9957-59eec1800ee2" />
 
@@ -555,6 +555,7 @@ func update_score():
 	ui.get_node("Score").text = "SCORE: " + str(score)
 	
 ```
+
 
 
 
