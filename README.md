@@ -205,23 +205,39 @@ Next lets create the ground our character will be running on. It will be a simil
 
 ## Creating the Main Scene
 
-Lets now create our main scene where its all gonna come together. First create a new scene with a unit Node as the root node. Next lets add in our dino, ground, and backgrounds scenes. We can do that by clicking the chain button next to the plus sign in the hierarchy. Make sure while adding that they are correctly orded so the dinosaur is in front of the ground, which is in front of the background. Additionally, to make sure the dinosaur is always at the front, we can go back to the dino scene and by clicking the movie icon next to the node and change the Z-Index property in Ordering to be 1. This will ensure that it is positioned in fron of everything that has a Z-Index less than it and everything is 0 by default. After that, lets add a Camera2D node which will allow us to see when we play the game. Change its transform position property to be 576 x and 324 y so that the camera is center on the screen. After doing this, we can save the scene and run the game! You should be able to see all the sprites we just setup on the screen. 
+Lets now create our main scene where its all gonna come together. 
+
+First create a new scene with a unit plain Node as the root node. Next lets add in our dino, ground, and backgrounds scenes that we just made. We can do that by clicking the chain button next to the plus sign in the hierarchy. Make sure while adding that they are correctly orded so the dinosaur is in front of the ground, which is in front of the background. Additionally, to make sure the dinosaur is always at the front, we can go back to the dino scene and by clicking the movie icon next to the node and change the Z-Index property in Ordering to be 1. This will ensure that it is positioned in fron of everything that has a Z-Index less than it and everything is 0 by default. 
+
+After that, lets add a Camera2D node - this is what is displayed when we are playing the game. Change its transform position property to be 576 x and 324 y so that the camera is center on the screen. After doing this, we can save the scene and run the game! You should be able to see all the sprites we just setup on the screen. 
 
 <img width="1511" alt="Screenshot 2025-02-06 at 10 54 42 PM" src="https://github.com/user-attachments/assets/7aff9533-cada-433f-9318-dd843c9b90b0" />
 
-Epic! Lets now add some code to add some movement to our character. Lets go back to the dino scene and lets click the add script button in the hierarchy. Click create and you should get a file that looks like the following. 
+Epic! Lets now add some code to add some movement to our character. Go back to the dino scene and lets click the add script button in the hierarchy. Click create and you should get a file that looks like the following. 
 
 <img width="949" alt="Screenshot 2025-02-06 at 11 01 23 PM" src="https://github.com/user-attachments/assets/8c049871-20e6-4ab8-9a75-d36f4c84ffbf" />
 
-This looks a little scary but for those who know Python its also a little familiar. This is GDScript, Godot's programming language. lets go through every line of code and we can learn some things about this language. In the first line of code we are extending from the class CharacterBody2D, inhieriting its functionality. Next, we declare 2 consts SPEED and JUMP_VELOCITY. const is just a value that is unchanging throughout the run of our program, this will be pretty useful for values like speeds we will be adding. Next, we have a function called _physics_process with a parameter delta. The physics_process function is called on every object that has it 60 times a second at least, and delta is the amount of time between the current frame and the last frame. We can use this function to ensure we are consistently performing our physics calculations. Next it looks like we add gravity if the object is not on the floor after multiplying it by delta. Godot offers some cool functions to make physics a lot easier, like the is_on_floor() function. We multiply gravity by delta because its going to be consistently reducing the velocity every frame. The following lines check if the enter key or "ui_accept" is being pressed and if the player is on the floor, if so updates their velocity. The last couple of lines of code allow for you to move left and right. Since we will be moving the background to simulate motion we can delete these, execept the move_and_slide function. move_and_slide takes our newly updated physics values to change the position of the object.
+This looks a little scary but for those who know Python its also a little familiar. This is GDScript, Godot's programming language. Lets go through every line of code and learn some things about this language. 
 
-With all of this in mind lets make a couple changes. First lets update our jump velocity to be -500 instead of -400. This will just make us jump higher. We can also delete the speed variable because we are not using it anymore. Lastly, lets create a new @onready variable called jumpsfx and set it = $JumpSFX. What does this mean? @onready means that the variable will be set when the scene is instantiated. $JumpSFX means that we will go into the scene tree and get the node named JumpSFX. What this line of code will be doing will be creating a reference to the jump sfx node in the scene. Then we can do jumpsfx.play() right after we set our jump_velocity. Remember that theres indentation like Python!
+In the first line of code we are extending from the class CharacterBody2D, [inhieriting its functionality](https://en.wikipedia.org/wiki/Inheritance_(object-oriented_programming)). For the unfamiliar, this means that we are taking the functionality of whatever the CharacterBody2D has to offer, and adding more on top of it! 
+
+Next, we declare 2 consts SPEED and JUMP_VELOCITY. A const is just a value that is unchanging throughout the run of our program, this will be pretty useful for values like SPEED or JUMP_VELOCITY, since we want our SPEED or JUMP_VELOCITY to always be the same for the most part. 
+
+Next, we have a function called _physics_process with a parameter delta. The physics_process function is called on every object that has it 60 times a second at least, and delta is the amount of time between the current frame and the last frame. We can use this function to ensure we are consistently performing our physics calculations. 
+
+Next it looks like we add gravity if the object is not on the floor after multiplying it by delta. Godot offers some cool functions to make physics a lot easier, like the is_on_floor() function. We multiply gravity by delta to insure that we are updating our velocity consistently every second. 
+
+The following lines check if the enter key or "ui_accept" is being pressed and if the player is on the floor, if so updates their velocity. The last couple of lines of code allow for you to move left and right. Since we will be moving the background to simulate motion we can delete these, execept the move_and_slide function. move_and_slide takes our newly updated physics values to change the position of the object.
+
+With all of this in mind lets make a couple changes. Remember that theres indentation like Python! First lets update our jump velocity to be -500 instead of -400. You can think of this as applying a negative y velocity equivalent to 500 pixels/s. Since the Godots coordinate system starts in the top left corner and y increases as you go down, this is applying an upwards velocity and changing it from 400 -> 500 is increasing that velocity!
+
+We can also delete the speed variable because we are not going to be using it anymore - we deleted the code that lets you move with the arrow keys! Lastly, lets create a new @onready variable called jumpsfx and set it = $JumpSFX. @onready means that the variable will be set when the scene is created when the game starts. "$JumpSFX" means that we will go into the heirarchy tree and get the child node named JumpSFX. This line will create a reference to the JumpSFX that we can use to call jumpsfx.play() right after we set our jump_velocity, which will cause the jump sfx to play when we jump! 
 
 <img width="652" alt="Screenshot 2025-02-06 at 11 36 08 PM" src="https://github.com/user-attachments/assets/d750c0b6-3340-4db7-9a77-af12e6bbe2b9" />
 
 Now when we start the game, if you press the enter key you will be able to see the player jump and hear the sfx! 
 
-Next lets change our animations when we press the enter key. Using the same strategy we used for the audio player, lets include our animation player and play the different animations when our character is in different states like below.
+Next lets change our animations when we press the enter key. Using the same strategy we used for the audio player, lets include our animation player node and play the different animations when our character is in different states like below.
 
 <img width="666" alt="Screenshot 2025-02-06 at 11 43 32 PM" src="https://github.com/user-attachments/assets/a35f72cc-418c-4add-a4b3-40bdc511cfaf" />
 
@@ -238,7 +254,9 @@ Easy peasy now!
 
 ## Loopin'
 
-Lets setup the main gameplay loop now. Lets go back to the main game scene and add a script on the root node. In this node we are going to setup a couple things. First we are going to setup a newgame function that gets called every time the game is started. Then we will setup the process function that gets called every frame, this is where we will move the floor and the background. We are lastly going to setup scoring and obstacles and restarting the game. Heres the code for the first half of what we set to accomplish. Lets add some UI so we can display the score on the screen next. 
+Time to setup the main gameplay loop! Lets go back to the main game scene and add a script on the root node. In this node we are going to setup a couple things. First we are going to setup a newgame function that gets called every time the game is started. Then we will setup the process function that gets called every frame, this is where we will move the floor and the background. We are lastly going to setup scoring and obstacles and restarting the game. Heres the code for the first half of what we set to accomplish. Lets add some UI so we can display the score on the screen next. 
+
+**For explainations what the lines do, check out the comments I left noted by #s!**
 
 ```
 extends Node
@@ -248,9 +266,11 @@ extends Node
 @onready var background = $Background
 @onready var camera = $Camera2D
 
+# The starting position of the camera and the dinosaur!
 const DINO_START_POS = Vector2i(103, 497)
 const CAM_START_POS = Vector2i(576, 324)
 
+# Speed variables that we can use to increase the speed of the game over time
 var speed : float 
 const START_SPEED = 10.0
 const MAX_SPEED = 25
@@ -258,14 +278,17 @@ var screen_size : Vector2i
 
 var score : int
 
-# Called when the node enters the scene tree for the first time.
+# This is called when the game starts!
 func _ready() -> void:
 	screen_size = get_window().size
 	newgame()
 
+# our new game functon! here we are gonna set up a bunch of the initial values for all of our objects
 func newgame():
 	dino.position = DINO_START_POS
 	camera.position = CAM_START_POS
+
+	# zeroing out the velocities for the moving objects!
 	dino.velocity = Vector2i(0,0)
 	ground.position = Vector2i(0,0)
 	
@@ -274,20 +297,26 @@ func newgame():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# constantly moving the dinosaur and the camera to the right!
 	dino.position.x += speed
 	camera.position.x += speed
 	
 	score += speed * 3
-	
+
+	# This bit is a little tricky!
+	# Once the ground is about to be off the screen,
+	# we move it forward the amount of the sreensize to ensure we never run out of ground
 	if camera.position.x - ground.position.x > screen_size.x * 1.5:
 		ground.position.x += screen_size.x
 ```
 
-Lets create a new scene with a CanvasLayer as the root node. 
+Sweet! Now you should see the dinosaur moving and the ground moving! 
+
+Now we are going to setup the UI for the game to showcase the scoring. Create a new scene with a CanvasLayer node as the root node.
 
 <img width="1484" alt="Screenshot 2025-02-07 at 12 23 47 AM" src="https://github.com/user-attachments/assets/be5fc39e-9fdc-4198-b68d-d7307a2dbde5" />
 
-Using the label nodes I created the following UI. Then I linked it to my main scene. 
+Using the label nodes I created the following UI. Then I linked it to my main scene like we did with all the other scenes! 
 
 Combining our new UI with our existing code we can update the scoring and also add speed increasing!
 
@@ -333,6 +362,8 @@ func newgame():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if playing:
+		# we can increase our speed over time with this line
+		# we take the minimum of our max_speed const and the start_speed + some score multiplier!
 		speed  = min(START_SPEED + score/SPEED_CONST, MAX_SPEED)
 		dino.position.x += speed
 		camera.position.x += speed
@@ -343,21 +374,23 @@ func _process(delta: float) -> void:
 		if camera.position.x - ground.position.x > screen_size.x * 1.5:
 			ground.position.x += screen_size.x
 	else:
+		# this allows us to start the game by having to press enter!
 		if Input.is_action_just_pressed("ui_accept"):
 			playing = true
 			ui.get_node("Start").hide()
 		
-		
+# updating the score text!
 func update_score():
 	ui.get_node("Score").text = "SCORE: " + str(score)
 	
 ```
 
-Now lets add our obstacle to our scene. Heres the code that will do that!
+Our last bit of code will be adding the obstacle to our scene. This is the trickiest part! 
 
 ```
 extends Node
 
+# Preload is going to give us a copy of the stump we can "spawn in"
 var stump_asset = preload("res://assets/scenes/stump.tscn")
 
 @onready var dino = $Dino
@@ -373,16 +406,22 @@ var speed : float
 const START_SPEED = 10.0
 const MAX_SPEED = 25
 const SPEED_CONST =  100000
+
+# these are some new variables we will need to know where to create the stumps on the screen
 var screen_size : Vector2i
 var ground_height : int
 
+# a variable that tracks if there is currently a stump on the screen and the current stump
 var stumped : bool
+var current_stump
+
 var score : int
 var playing : bool
-var current_stump 
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# this gets the information we need for where to spawn the stump
 	screen_size = get_window().size
 	ground_height = ground.get_node("Sprite2D").texture.get_height()
 	stumped = false
@@ -405,7 +444,8 @@ func newgame():
 func _process(delta: float) -> void:
 	if playing:
 		speed  = min(START_SPEED + score/SPEED_CONST, MAX_SPEED)
-		
+
+		# if we have a stump spawned, check if its off the screen, otherwise create a new one
 		if stumped:
 			if(current_stump.position.x < dino.position.x):
 				stumped = false
@@ -425,14 +465,20 @@ func _process(delta: float) -> void:
 		if Input.is_action_just_pressed("ui_accept"):
 			playing = true
 			ui.get_node("Start").hide()
-		
+
+# this is our function for creating a new stump on the screen
 func create_stump():
+	# first we create the stump node
 	var stump = stump_asset.instantiate()
+
+	# Then we get the height of the stump and scale and use that to position it on the screen
 	var stump_height = stump.get_node("Sprite2D").texture.get_height()
 	var stump_scale = stump.get_node("Sprite2D").scale
 	var stump_x = screen_size.x + score + randi_range(100, 300)
 	var stump_y = screen_size.y - ground_height - (stump_height * stump_scale.y * 4) + 12
 	stump.position = Vector2i(stump_x, stump_y)
+
+	# set our stump boolean to true and add it to the scene by calling add_child
 	stumped = true
 	add_child(stump)
 	current_stump = stump
@@ -488,6 +534,7 @@ func newgame():
 	ground.position = Vector2i(0,0)
 	
 	stumped = false
+	# delete any stumps if they exist
 	if(current_stump):
 		current_stump.queue_free()
 		current_stump = null
@@ -521,6 +568,7 @@ func _process(delta: float) -> void:
 		if camera.position.x - ground.position.x > screen_size.x * 1.5:
 			ground.position.x += screen_size.x
 	elif(game_overed):
+		# new game over state!
 		if Input.is_action_just_pressed("ui_accept"):
 			newgame()
 			game_overed = false
@@ -537,10 +585,12 @@ func create_stump():
 	var stump_y = screen_size.y - ground_height - (stump_height * stump_scale.y * 4) + 12
 	stump.position = Vector2i(stump_x, stump_y)
 	stumped = true
+	# when something enters the collision body of the stump -> we call the function hit_stump
 	stump.body_entered.connect(hit_stump)
 	add_child(stump)
 	current_stump = stump
-	
+
+# call the game_over function if the dinosaur is what touches the stump
 func hit_stump(body):
 	if(body.name == "Dino"):
 		game_over()
@@ -555,6 +605,9 @@ func update_score():
 	ui.get_node("Score").text = "SCORE: " + str(score)
 	
 ```
+
+Yay! Congrats on finishing your first Godot game! Try to mess around and add some more functionality to the game and learn more Godot!
+
 
 
 
